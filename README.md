@@ -197,8 +197,16 @@ I fixed this by creating a helper month column in the raw dataset (=MIESIĄC()) 
 <img width="1115" height="160" alt="image" src="https://github.com/user-attachments/assets/c2d5938c-663f-4dcd-8351-435c42c4af95" />
 <img width="1657" height="285" alt="image" src="https://github.com/user-attachments/assets/51555b25-3edc-4894-a3ab-6211f7aefe7d" />
 
+**Project Summary:**
+The old report showed completely wrong results due to dirty data, broken formulas, and hardcoded numbers. Because of this, management was drawing false conclusions and planning harmful business decisions.
 
+What I Fixed:
+I remove duplicates and fix typos (e.g., changing "Krakow" to "Kraków").
+I replaced the wrong markup formula (profit/cost) with the correct margin calculation (profit/revenue).
+I added locked ranges ($) and filtered out cancelled orders in all 'SUMA.WARUNKÓW' functions.
+I removed hardcoded numbers and linked all tables to dynamic formulas that pull data directly from the source.
 
-
-
-
+Business Impact
+The real e-bike margin is 31.9%, not a crazy 600%. This saved the company from buying unnecessary stock.
+I proved that the Gdańsk store (which was going to be penalized for the "worst result") is actually the best location and the only one that hit its target (100.8%).
+Management now sees the actual target completion at 92.4% (instead of a fake 112%). The file is now a bug-free, fully automated tool.
