@@ -177,6 +177,28 @@ I added a second condition to the formula so it only counts transactions with th
 
 The previous analyst failed to use absolute references for the denominator (Total Revenue in B29). When dragged down, the relative reference shifted into empty cells, causing errors.  I anchored the denominator with absolute references and applied it down the column. This exposed the true percentage shares for all missing stores and brought the grand total to a 100%.
 
+16. In the "Sprzedaż i marża wg kategorii" table, for both the Revenue and Cost columns, I added a condition to include only completed "Zrealizowana" orders. I did this in the exact same way as in the "Sprzedaż wg sklepów" table, using the 'SUMA.WARUNKÓW' function.
+    
+<img width="1265" height="471" alt="image" src="https://github.com/user-attachments/assets/aaf85e8d-86c7-4bbd-b11a-c39adca390fc" />
+
+17. found the exact same margin error here as in the main table. The formula was calculating markup instead of margin. I fixed it to divide profit by revenue instead of cost (=(B33-C33)/B33).
+<img width="715" height="582" alt="image" src="https://github.com/user-attachments/assets/37bff5d5-980b-4fd7-84f1-9b46d01a6081" />
+<img width="720" height="578" alt="image" src="https://github.com/user-attachments/assets/454cd7a1-1f7a-45f0-bebf-fdc8febf3eb7" />
+
+18. The "Sales by Month" table contained hardcoded values pasted from an old pivot table. Because the data was static, it didn't update after cleaning the raw data (like removing duplicates) and showed an inflated total of over 14.2M.
+
+<img width="697" height="322" alt="image" src="https://github.com/user-attachments/assets/74f8b6a8-54d6-4f20-96eb-328d2997151b" />
+
+I fixed this by creating a helper month column in the raw dataset (=MIESIĄC()) and replacing the static numbers with a dynamic SUMA.WARUNKÓW formula, filtering by month and the "Zrealizowana" order status.
+<img width="1220" height="747" alt="image" src="https://github.com/user-attachments/assets/7d836bce-be55-4594-b2b3-0c84af5c4ddd" />
+
+19. The original "Conclusions" section was driven by flawed data and broken formulas, leading to dangerous business recommendations.
+
+<img width="1115" height="160" alt="image" src="https://github.com/user-attachments/assets/c2d5938c-663f-4dcd-8351-435c42c4af95" />
+<img width="1657" height="285" alt="image" src="https://github.com/user-attachments/assets/51555b25-3edc-4894-a3ab-6211f7aefe7d" />
+
+
+
 
 
 
